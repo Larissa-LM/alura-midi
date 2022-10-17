@@ -1,13 +1,11 @@
 function tocaSom(seletorAudio) {
     const elemento = document.querySelector(seletorAudio);
-    if (elemento === null) {
-        console.error('Elemento não encontrado');
-    }
 
-    if (elemento != null){
-        if (elemento.localName === 'audio') {
+    if (elemento && elemento.localName === 'audio'){ //antes: elemento != null, agora só o elemento torna o if mais inteligente já que ele vai verificar se existe um elemento 
             elemento.play();
-        }
+    }
+    else {
+        console.error('Elemento não encontrado ou Seletor inválido ');
     }
 
 
